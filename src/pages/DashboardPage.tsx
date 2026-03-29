@@ -180,6 +180,11 @@ export default function DashboardPage() {
               based on real-time conditions, and forecast demand patterns — reducing empty
               cargo by an estimated additional 22%.
             </p>
+            <p className='text-[#555] text-sm max-w-xl'>
+
+              Demo Mode: Data is simulated for demonstration purposes and does not reflect real-time operations.
+
+            </p>
           </div>
           <div className="w-10 h-10 rounded-lg bg-[#0a0a0a] border border-[#1a1a1a] flex items-center justify-center flex-shrink-0">
             <TrendingUp className="w-5 h-5 text-[#333]" />
