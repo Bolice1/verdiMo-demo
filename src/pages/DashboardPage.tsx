@@ -32,6 +32,11 @@ export default function DashboardPage() {
       <div className="mb-8">
         <p className="section-label mb-1">Overview</p>
         <h1 className="font-display text-3xl font-bold tracking-tight">Dashboard</h1>
+        <p className='text-[#555] text-sm max-w-xl'>
+
+          Demo Mode: Data is simulated for demonstration purposes and does not reflect real-time operations.
+
+        </p>
       </div>
 
       {/* Stat cards */}
@@ -39,16 +44,16 @@ export default function DashboardPage() {
         {loading
           ? Array(4).fill(0).map((_, i) => <CardSkeleton key={i} />)
           : statCards.map(({ label, value, icon: Icon, suffix }, i) => (
-              <div key={label} className={`card p-5 fade-up`} style={{ animationDelay: `${i * 0.08}s` }}>
-                <div className="flex items-start justify-between mb-4">
-                  <Icon className="w-4 h-4 text-[#555]" />
-                  <ArrowUpRight className="w-3.5 h-3.5 text-[#2a2a2a]" />
-                </div>
-                <p className="stat-number text-[28px] text-white leading-none mb-1">{value}</p>
-                <p className="text-[11px] font-mono text-[#555] mb-0.5">{suffix}</p>
-                <p className="text-xs text-[#444]">{label}</p>
+            <div key={label} className={`card p-5 fade-up`} style={{ animationDelay: `${i * 0.08}s` }}>
+              <div className="flex items-start justify-between mb-4">
+                <Icon className="w-4 h-4 text-[#555]" />
+                <ArrowUpRight className="w-3.5 h-3.5 text-[#2a2a2a]" />
               </div>
-            ))}
+              <p className="stat-number text-[28px] text-white leading-none mb-1">{value}</p>
+              <p className="text-[11px] font-mono text-[#555] mb-0.5">{suffix}</p>
+              <p className="text-xs text-[#444]">{label}</p>
+            </div>
+          ))}
       </div>
 
       <div className="grid grid-cols-3 gap-4 mb-4">
@@ -109,11 +114,10 @@ export default function DashboardPage() {
                 </div>
                 <div className="text-right">
                   <span
-                    className={`tag ${
-                      s.status === 'delivered' ? 'tag-green' :
-                      s.status === 'in-transit' ? 'tag-yellow' :
-                      s.status === 'pending' ? 'tag-active' : 'tag-red'
-                    }`}
+                    className={`tag ${s.status === 'delivered' ? 'tag-green' :
+                        s.status === 'in-transit' ? 'tag-yellow' :
+                          s.status === 'pending' ? 'tag-active' : 'tag-red'
+                      }`}
                   >
                     {s.status}
                   </span>
@@ -180,11 +184,7 @@ export default function DashboardPage() {
               based on real-time conditions, and forecast demand patterns — reducing empty
               cargo by an estimated additional 22%.
             </p>
-            <p className='text-[#555] text-sm max-w-xl'>
 
-              Demo Mode: Data is simulated for demonstration purposes and does not reflect real-time operations.
-
-            </p>
           </div>
           <div className="w-10 h-10 rounded-lg bg-[#0a0a0a] border border-[#1a1a1a] flex items-center justify-center flex-shrink-0">
             <TrendingUp className="w-5 h-5 text-[#333]" />
